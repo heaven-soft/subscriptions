@@ -18,6 +18,7 @@ class RevenueCatService implements SubscriptionService {
       return SubscriptionModel(
         id: package.identifier,
         title: product.title,
+        introductoryPrice: product.introductoryPrice,
         priceString: product.priceString,
         description: product.description,
         currencyCode: product.currencyCode,

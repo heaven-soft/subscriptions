@@ -1,3 +1,5 @@
+import 'package:purchases_flutter/models/introductory_price.dart';
+
 class SubscriptionModel {
   final String id;
   final String title;
@@ -6,6 +8,7 @@ class SubscriptionModel {
   final String priceString;
   final String currencyCode;
   final String? duration;
+  final IntroductoryPrice? introductoryPrice;
 
   SubscriptionModel({
     required this.id,
@@ -14,6 +17,7 @@ class SubscriptionModel {
     required this.description,
     required this.currencyCode,
     required this.price,
+    required this.introductoryPrice,
     this.duration,
   });
 }
