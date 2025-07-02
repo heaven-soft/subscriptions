@@ -45,6 +45,19 @@ class RevenueCatService implements SubscriptionService {
   }
 
   @override
+  Future<List<EntitlementInfo>> getActiveSubscriptions() async {
+    final customerInfo = await Purchases.getCustomerInfo();
+    Map<String, EntitlementInfo> activeSubscriptions = customerInfo.entitlements.active;
+    List<EntitlementInfo> infoResult = [];
+    activeSubscriptions.forEach(
+      (key, value) {
+        infoResult.add(value);
+      },
+    );
+    return infoResult;
+  }
+
+  @override
   Future<void> restorePurchases() async {
     await Purchases.restorePurchases();
   }
